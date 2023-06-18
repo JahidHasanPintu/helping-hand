@@ -11,49 +11,30 @@
   </head>
   <body>
 
-  <header>
-        <nav class="navbar navbar-expand-lg bg-secondary-subtle">
-            <div class="container-fluid">
-              <img src="Photos/logo.png" alt="" class="my-logo" height="60px " width="200px">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav my-nav mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">How it works</a>
-                  </li>
-                  
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Cooking</a></li>
-                      <li><a class="dropdown-item" href="#">Cleaner</a></li>
-                      
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Feedback</a>
-                  </li>
-                  <li class="nav-item">
-                    <span class="navbar-toggler-icon"></span>
-                   
-                  </li>
-                  <li>
-                    
-                  </li>
-                </ul>
-                
-                <form class="d-flex" role="search">
-                  <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                  <!-- <a href="" class="btn btn-outline navbar-btn"> login</a>
-                  <a href="" class="btn btn-outline navbar-btn"> signin</a> -->
-                </form>
-              </div>
-            </div>
-          </nav>
-         
-
-    </header>
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a href="index.php" class="navbar-brand">Helping Hand</a>
+    <form class="d-flex">
+    <a class="navbar-brand" href="index.php">Home</a>
+    <a class="navbar-brand" href="profile.php">Profile</a>
+    <a class="navbar-brand" href="home.php">Admin</a>
+    <a class="navbar-brand" href="feedback.php">FeedBack</a>
+    <span class="navbar-text">
+      <?php
+      if (isset($_SESSION['username'])) {
+          // echo "Welcome " . $_SESSION['username'];
+          echo '<a href="logout.php" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</a>';
+      } else {
+          echo "&nbsp;";
+      }
+      ?>
+    </span>
+  </div>
+  <?php
+  if (!isset($_SESSION['username'])) {
+      echo '<a href="login.php" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</a>';
+  }
+  ?>
+    </form>
+  </div>
+</nav>
