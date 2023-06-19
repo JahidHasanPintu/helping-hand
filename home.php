@@ -31,6 +31,7 @@ if ($_SESSION['role'] !== 'admin') {
       <?php } ?>
 
       <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#feedbackModal">Add Servent</button>
+      <a href="allbooking.php" class="btn btn-primary mt-4" >All Booking</a>
       <!-- ADD TASK FORM -->
 
   <!-- Feedback Modal -->
