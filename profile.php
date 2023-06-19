@@ -4,8 +4,12 @@
 
 
 <?php
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+}
 // Fetch hire_data from the database
-$query = "SELECT * FROM hire_data";
+$loggedInUserEmail = $_SESSION['email'];
+$query = "SELECT * FROM hire_data WHERE email = '$loggedInUserEmail'";
 $result = mysqli_query($conn, $query);
 $hireData = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
