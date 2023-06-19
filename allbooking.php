@@ -4,8 +4,7 @@
 <?php
 // Fetch hire_data from the database for the logged-in user
 if (isset($_SESSION['email'])) {
-  $loggedInUserEmail = $_SESSION['email'];
-  $query = "SELECT * FROM hire_data WHERE email = '$loggedInUserEmail'";
+  $query = "SELECT * FROM hire_data ;
   $result = mysqli_query($conn, $query);
   $hireData = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
