@@ -2,12 +2,10 @@
 <?php include('includes/header.php'); ?>
 
 <?php
-// Fetch hire_data from the database for the logged-in user
-if (isset($_SESSION['email'])) {
-  $query = "SELECT * FROM hire_data ;
-  $result = mysqli_query($conn, $query);
-  $hireData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-}
+// Fetch hire_data from the database
+$query = "SELECT * FROM hire_data";
+$result = mysqli_query($conn, $query);
+$hireData = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <!-- HTML table using Bootstrap -->
